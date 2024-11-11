@@ -1,0 +1,53 @@
+index-state: 2024-11-07T03:32:13Z
+
+packages:
+  base-deriving-via
+  orphans-deriving-via
+
+-- Ensures colourized output from test runners
+test-show-details: direct
+
+tests: true
+benchmarks: true
+
+program-options
+  ghc-options: -Werror
+
+-- Windows cross with bitvec/simd is broken.
+package bitvec
+  -- Workaround for windows cross-compilation
+  flags: -simd
+
+allow-newer:
+  , assoc:base
+  , binary-orphans:base
+  , boring:base
+  , cborg:base
+  , data-fix:base
+  , generically:base
+  , hashable:base
+  , indexed-traversable:base
+  , indexed-traversable-instances:base
+  , integer-conversion:base
+  , integer-logarithms:base
+  , lifted-async:base
+  , microstache:base
+  , OneTuple:base
+  , quickcheck-instances:base
+  , scientific:base
+  , semialign:base
+  , serialise:base
+  , splitmix:base
+  , text-short:base
+  , these:base
+  , time-compat:base
+  , time-compat:time
+
+source-repository-package
+  type: git
+  location: https://github.com/IntersectMBO/cardano-prelude
+  tag: 533345b47c10ea5fbbff0068ddac11d9950178f4
+  --sha256: 0yi06z2ipk7hz6ahgbqrynacqj29653fnrvyvsag14vkpw1wnlbi
+  subdir:
+    cardano-prelude
+    cardano-prelude-test
