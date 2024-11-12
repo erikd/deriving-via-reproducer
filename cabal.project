@@ -18,6 +18,9 @@ package bitvec
   -- Workaround for windows cross-compilation
   flags: -simd
 
+constraints:
+  nothunks ^>= 0.1.5
+
 allow-newer:
   , assoc:base
   , binary-orphans:base
@@ -32,6 +35,7 @@ allow-newer:
   , integer-logarithms:base
   , lifted-async:base
   , microstache:base
+  , nothunks:time
   , OneTuple:base
   , quickcheck-instances:base
   , scientific:base
